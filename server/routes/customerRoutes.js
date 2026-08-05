@@ -1,0 +1,26 @@
+import { Router } from 'express';
+import { authenticate, authorize } from '../middleware/auth.js';
+import { asyncHandler } from '../middleware/asyncHandler.js';
+import * as customer from '../controllers/customerController.js';
+
+const router = Router();
+router.get('/restaurants', asyncHandler(customer.listRestaurants));
+router.get('/categories', asyncHandler(customer.listCategories));
+router.get('/restaurants/:restaurantId/menu', asyncHandler(customer.restaurantMenu));
+router.get('/restaurants/:restaurantId/reviews', asyncHandler(customer.restaurantReviews));
+router.get('/foods', asyncHandler(customer.listFoods));
+router.get('/foods/:foodId', asyncHandler(customer.foodDetails));
+router.use(authenticate, authorize('customer'));
+router.get('/cart', asyncHandler(customer.getCart));
+router.post('/cart/items', asyncHandler(customer.addCartItem));
+router.patch('/cart/items/:itemId', asyncHandler(customer.updateCartItem));
+router.delete('/cart/items/:itemId', asyncHandler(customer.removeCartItem));
+router.post('/orders', asyncHandler(customer.placeOrder));
+router.get('/orders', asyncHandler(customer.customerOrders));
+router.get('/orders/:orderId', asyncHandler(customer.customerOrderStatus));
+router.post('/orders/:orderId/reviews', asyncHandler(customer.submitReview));
+router.get('/locations', asyncHandler(customer.listLocations));
+router.post('/locations', asyncHandler(customer.createLocation));
+router.patch('/locations/:locationId', asyncHandler(customer.updateLocation));
+router.delete('/locations/:locationId', asyncHandler(customer.deleteLocation));
+export default router;
