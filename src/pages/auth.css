@@ -1,0 +1,17 @@
+.auth-page { display: flex; align-items: center; }
+.auth-container { display: flex; justify-content: center; }
+.auth-card { width: 100%; max-width: 420px; padding: 32px; margin: 20px 0; }
+.auth-card .eyebrow { color: var(--primary); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.auth-card form { margin-top: 20px; }
+
+.otp-inputs { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
+.otp-inputs input {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.otp-inputs input:focus { border-color: var(--primary); outline: none; }

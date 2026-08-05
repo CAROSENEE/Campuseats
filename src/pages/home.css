@@ -1,0 +1,76 @@
+.hero {
+  background: linear-gradient(180deg, var(--primary-tint) 0%, var(--bg) 100%);
+  padding: 48px 0 64px;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero-copy h1 { font-size: 40px; line-height: 1.12; margin-bottom: 14px; }
+.hero-sub { font-size: 15.5px; max-width: 480px; }
+
+.hero-search {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  gap: 10px;
+  margin-top: 20px;
+}
+.hero-search-loc { position: relative; }
+.hero-search-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  color: var(--muted);
+}
+.hero-search-input input {
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  width: 100%;
+  background: transparent;
+  color: var(--ink);
+}
+
+.hero-visual { position: relative; height: 340px; }
+.hero-plate {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+.hero-plate img { width: 100%; height: 100%; object-fit: cover; }
+.hero-plate-1 { width: 230px; height: 230px; top: 10px; right: 40px; }
+.hero-plate-2 { width: 150px; height: 150px; top: 190px; right: 260px; border-color: var(--gold-tint); }
+.hero-plate-3 { width: 120px; height: 120px; top: 0; right: 300px; border-color: var(--secondary-tint); }
+
+.section-block { margin: 40px 0; }
+
+.category-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.category-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+.category-chip:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-tint); }
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .hero-search { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,52 @@
+.order-route {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+.order-route-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 28px;
+}
+.order-route-step:last-child { padding-bottom: 0; }
+
+.order-route-dot {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 1;
+}
+.order-route-step.done .order-route-dot { background: var(--secondary); border-color: var(--secondary); }
+.order-route-step.active .order-route-dot { border-color: var(--primary); }
+.order-route-step.active .order-route-dot span {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--primary);
+  animation: pulse-dot 1.4s ease infinite;
+}
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.order-route-label {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.order-route-step.done .order-route-label,
+.order-route-step.active .order-route-label { color: var(--ink); }
+
+.order-route-line {
+  position: absolute;
+  left: 13px;
+  top: 26px;
+  width: 2px;
+  height: calc(100% - 26px);
+  background: var(--border);
+}
+.order-route-step.done .order-route-line { background: var(--secondary); }

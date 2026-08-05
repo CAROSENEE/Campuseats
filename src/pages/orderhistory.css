@@ -1,0 +1,7 @@
+.order-history-list { display: flex; flex-direction: column; gap: 14px; }
+.order-history-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.order-history-items { font-size: 13.5px; margin: 10px 0 0; }
+
+@media (max-width: 480px) {
+  .order-history-top { flex-direction: column; gap: 6px; }
+}

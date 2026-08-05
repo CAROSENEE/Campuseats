@@ -1,0 +1,11 @@
+.review-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 14px;
+}
+.review-rating-row:last-of-type { border-bottom: none; }
+.review-list { display: flex; flex-direction: column; gap: 12px; }

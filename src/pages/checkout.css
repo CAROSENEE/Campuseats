@@ -1,0 +1,38 @@
+.checkout-location-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+.checkout-location-list { display: flex; flex-direction: column; gap: 8px; }
+.checkout-location-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.checkout-location-item.active { border-color: var(--primary); background: var(--primary-tint); }
+.checkout-location-item input { margin-top: 4px; accent-color: var(--primary); }
+
+.checkout-payment-options { display: flex; gap: 12px; flex-wrap: wrap; }
+.checkout-payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 180px;
+}
+.checkout-payment-option.active { border-color: var(--primary); background: var(--primary-tint); }
+.checkout-payment-option input { accent-color: var(--primary); }
+
+.checkout-mock-card {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  background: var(--bg);
+}
